@@ -9,7 +9,7 @@ TODO: env vars + config files
 What we would like to ask of you is the following:
 
 1. Fork the repository.
-2. Build a pipeline that is triggered whenever there is a push or a pull request opened/reopened/editet to the main branch, with the following steps:
+2. Build a pipeline in GitHub Actions that is triggered whenever there is a push or a pull request opened/reopened/editet to the main branch, with the following steps:
     1. Unit tests ran
     2. docker image built
     3. docker image is pushed to an artifact repository
