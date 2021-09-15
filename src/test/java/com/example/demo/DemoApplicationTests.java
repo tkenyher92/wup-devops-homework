@@ -25,7 +25,7 @@ class DemoApplicationTests {
     public void testApiResponseIsOk() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
 
-        final String url = "http://localhost:" + randomServerPort + "/current-weather";
+        final String url = "http://localhost:" + randomServerPort + "/";
 
         URI uri = new URI(url);
 
@@ -37,7 +37,7 @@ class DemoApplicationTests {
     public void testApiResponseIsCorrect() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
 
-        final String url = "http://localhost:" + randomServerPort + "/current-weather";
+        final String url = "http://localhost:" + randomServerPort + "/";
 
         URI uri = new URI(url);
 

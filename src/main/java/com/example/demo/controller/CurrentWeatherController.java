@@ -19,7 +19,7 @@ public class CurrentWeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/current-weather")
+    @GetMapping("/")
     public String getCurrentWeather(Model model) {
         try {
             model.addAttribute("currentWeather", weatherService.getCurrentWeather());
