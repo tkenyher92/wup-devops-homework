@@ -26,8 +26,6 @@ public class CurrentWeatherController {
             logger.info("Weather data loaded properly.");
             return "current-weather";
         } catch (HttpClientErrorException e) {
-            logger.error("Something went wrong!");
-            logger.debug("You should check the if the API key is correct.");
             throw new HttpClientErrorException(e.getStatusCode(), e.getStatusText());
         }
     }

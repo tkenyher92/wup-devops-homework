@@ -9,10 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     private static final Logger logger = LogManager.getLogger(DemoApplication.class);
-
+    
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
         logger.info("Current Weather App has started.");
-    }
-
+    } 
 }

@@ -29,6 +29,9 @@ public class WeatherService {
     private String apiKey;
     @Value("${api.openweathermap.city}")
     private String city;
+    @Value("${app.is.everything.ok}")
+    private boolean isEverythingOk;
+
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
@@ -41,9 +44,13 @@ public class WeatherService {
 
     public CurrentWeather getCurrentWeather() {
 
+        if (!isEverythingOk) {
+            logger.error("There is still something FISHY. Maybe try logs in DEBUG level");
+            logger.debug("app.is.everything.ok should be true in the application.properties");  
+        }
+
         URI url = new UriTemplate(WEATHER_URL).expand(city, "hu", apiKey);
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-
         return convert(response);
     }
 
