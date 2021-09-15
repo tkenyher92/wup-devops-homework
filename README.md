@@ -3,7 +3,13 @@ Welcome, weary traveler! You have arrived at W.UP's homework for applicants of o
 
 ## the app itself
 What you can find here is a general spring boot application, nothing too fancy. Here's a little documentation to get you started.
-TODO: env vars + config files
+
+config files:
+    - application.properties (Spring config)
+    - lo4j2-weather.yml (logging config)
+
+endpoints:
+    - a single "/" endpoint calling a weather API
 
 ## the exercise itself
 What we would like to ask of you is the following:
@@ -13,9 +19,10 @@ What we would like to ask of you is the following:
     1. Unit tests ran
     2. docker image built
     3. docker image is pushed to an artifact repository
-    4. the application is deployed to any cloud provider (100% your choice)
+    4. the application is deployed to any cloud provider (100% your choice). Calling the "/" endpoint should show the weather conditions of Miskolc!
     5. ABSOLUTELY OPTIONAL - somewhere in between there are scans running for any static code or security analyser
 3. The catch: place a shell script in the container that is ran every hour to check whether the env var IS_EVERYTHING_OK is true; if it's not, it should log it to stderr.
+4. AGAIN, OPTIONAL - even if the application is running, there might be an error message in the logs after calling the endpoint ;) Check it out!
 
 Please send us URL for **the forked repository** and the **URL for the webapplication**.
 Thank you!
