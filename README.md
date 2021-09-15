@@ -5,11 +5,11 @@ Welcome, weary traveler! You have arrived at W.UP's homework for applicants of o
 What you can find here is a general spring boot application, nothing too fancy. Here's a little documentation to get you started.
 
 config files:
-    - application.properties (Spring config)
-    - lo4j2-weather.yml (logging config)
+1. application.properties (Spring config)
+2. lo4j2-weather.yml (logging config)
 
 endpoints:
-    - a single "/" endpoint calling a weather API
+1. a single "/" endpoint calling a weather API
 
 ## the exercise itself
 What we would like to ask of you is the following:
