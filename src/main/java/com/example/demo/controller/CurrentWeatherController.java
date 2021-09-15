@@ -22,7 +22,7 @@ public class CurrentWeatherController {
     @GetMapping("/current-weather")
     public String getCurrentWeather(Model model) {
         try {
-            model.addAttribute("currentWeather", weatherService.getCurrentWeather("Budapest", "hu"));
+            model.addAttribute("currentWeather", weatherService.getCurrentWeather());
             logger.info("Weather data loaded properly.");
             return "current-weather";
         } catch (HttpClientErrorException e) {

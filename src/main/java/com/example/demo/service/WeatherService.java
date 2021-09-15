@@ -27,6 +27,8 @@ public class WeatherService {
 
     @Value("${api.openweathermap.key}")
     private String apiKey;
+    @Value("${api.openweathermap.city}")
+    private String city;
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
@@ -37,9 +39,9 @@ public class WeatherService {
         this.objectMapper = objectMapper;
     }
 
-    public CurrentWeather getCurrentWeather(String city, String country) {
+    public CurrentWeather getCurrentWeather() {
 
-        URI url = new UriTemplate(WEATHER_URL).expand(city, country, apiKey);
+        URI url = new UriTemplate(WEATHER_URL).expand(city, "hu", apiKey);
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
         return convert(response);

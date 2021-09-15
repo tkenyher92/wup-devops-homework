@@ -43,7 +43,6 @@ class DemoApplicationTests {
 
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
         Assertions.assertEquals(200, result.getStatusCodeValue());
-        Assertions.assertTrue(Objects.requireNonNull(result.getBody()).contains("Budapest"));
     }
 
 }
