@@ -53,4 +53,4 @@ jobs:
           tags: user/app:latest
           repository: fantom92/devops-hw
           secrets: |
-            GIT_AUTH_TOKEN=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
+            GIT_AUTH_TOKEN=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
