@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Java Unit Test CI
+name: Java Unit Test
 
 # Controls when the workflow will run
 on:
@@ -31,4 +31,4 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn clean test
