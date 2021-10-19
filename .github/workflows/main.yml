@@ -43,7 +43,7 @@ jobs:
         uses: docker/login-action@v1 
         with:
           username: fantom92
-          password: ${{ secret.DOCKER_SECRET_TOKEN }}
+          password: ${{ secrets.DOCKER_SECRET_TOKEN }}
       -
         name: Build and push
         id: docker_build
