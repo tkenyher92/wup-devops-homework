@@ -68,4 +68,4 @@ jobs:
         app-name: 'wup-devops-homework'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_a6d71ea31d56432297dfb3779b117c37 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_809a94de2bf8434e82bbfbc0789e1c8b }}/fantom92/devops-hw:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/devops-hw:${{ github.sha }}'
