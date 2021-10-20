@@ -34,6 +34,7 @@ jobs:
         run: mvn clean install
   dockerBuildPush:
     runs-on: ubuntu-latest
+    needs: buildJava
     steps:
       - name: Set up Docker Buildx
         id: buildx
@@ -51,3 +52,19 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/devops-hw:latest
+  deploy:
+    runs-on: ubuntu-latest
+    needs: dockerBuildPush
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'wup-devops-homework'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a6d71ea31d56432297dfb3779b117c37 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_809a94de2bf8434e82bbfbc0789e1c8b }}/fantom92/devops-hw:${{ github.sha }}'
