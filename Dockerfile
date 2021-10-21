@@ -16,7 +16,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package -DskipTests=True
 FROM openjdk:8-jdk-alpine
 
 RUN apk add --update apk-cron && rm -rf /var/cache/apk/*
-COPY cron-job /etc/cron.d/cron-jo
+COPY cron-job /etc/cron.d/cron-job
 COPY init.sh /usr/local/lib/init.sh
 COPY env-var-check-task.sh /usr/local/lib/env-var-check-task.sh
 
